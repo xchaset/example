@@ -4,23 +4,20 @@ import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelReader;
 import com.alibaba.excel.read.builder.ExcelReaderBuilder;
 import com.alibaba.excel.support.ExcelTypeEnum;
-import com.alibaba.fastjson.JSON;
 import com.xchaset.excelexample.excel.model.CustomerInfoModel;
 
 import java.util.List;
 
 public class ExcelReadService {
 
-    public static void main(String[] args) {
-        new ExcelReadService().readExcel();
-    }
 
-    public void readExcel(){
-        String pathName = "C:\\Users\\xiaozhaoming\\Documents\\customer.XLS";
+    public List readExcel(String pathName){
+        // 读取的监听器
         CustomerReadListener readListener = new CustomerReadListener();
-        ExcelReaderBuilder read = EasyExcel.read(pathName, CustomerInfoModel.class, readListener);
-        ExcelReader build = read.excelType(ExcelTypeEnum.XLS).build();
-        build.readAll();
-        List rows = readListener.getRows();
+        ExcelReaderBuilder readerBuilder = EasyExcel.read(pathName, CustomerInfoModel.class, readListener);
+        ExcelReader reader = readerBuilder.excelType(ExcelTypeEnum.XLS).build();
+        reader.readAll();
+        // 返回的数据
+        return readListener.getRows();
     }
 }
