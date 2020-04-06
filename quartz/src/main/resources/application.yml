@@ -1,0 +1,23 @@
+spring:
+  quartz:
+    jdbc:
+      initialize-schema: never
+    job-store-type: MEMORY
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: myQuartzCluster
+            instanceId: AUTO
+          jobstore:
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+            tablePrefix: qrtz_
+            isClustered: true
+            clusterCheckinInterval: 10000
+            useProperties: false
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 5
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
