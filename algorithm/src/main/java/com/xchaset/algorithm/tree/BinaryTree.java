@@ -17,6 +17,10 @@ public class BinaryTree {
         root.printNode();
     }
 
+    public void find(int value){
+
+    }
+
     private class TreeNode{
         private int value;
         private TreeNode left;
