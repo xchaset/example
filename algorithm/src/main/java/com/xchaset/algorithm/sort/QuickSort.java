@@ -1,4 +1,4 @@
-package com.xchaset.algorithm.tree;
+package com.xchaset.algorithm.sort;
 
 public class QuickSort {
 

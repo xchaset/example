@@ -1,9 +1,12 @@
-package com.xchaset.algorithm.tree;
+package com.xchaset.algorithm.sort;
 
 public class BinaryTree {
 
     private TreeNode root;
 
+    public TreeNode getRoot(){
+        return root;
+    }
 
     public void add(int value){
         if (root == null) {
@@ -17,11 +20,33 @@ public class BinaryTree {
         root.printNode();
     }
 
-    public void find(int value){
-
+    public int getMax(TreeNode treeNode){
+        if (treeNode == null) {
+            return -1;
+        }else {
+            int leftVal = getMax(treeNode.left);
+            int rightVal = getMax(treeNode.right);
+            int val = treeNode.value;
+            return Math.max(Math.max(leftVal,rightVal),val);
+        }
     }
 
-    private class TreeNode{
+    public int getTreeHeight(TreeNode treeNode){
+        if (treeNode == null){
+            return 0;
+        }
+        if (treeNode.left == null && treeNode.right == null) {
+            return 0;
+        } else {
+            int leftHeight = getTreeHeight(treeNode.left);
+            int rightHeight = getTreeHeight(treeNode.right);
+            return Math.max(leftHeight,rightHeight) + 1;
+        }
+    }
+
+
+
+    public class TreeNode{
         private int value;
         private TreeNode left;
         private TreeNode right;
@@ -55,5 +80,7 @@ public class BinaryTree {
                 this.right.printNode();
             }
         }
+
+
     }
 }

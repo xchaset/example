@@ -1,4 +1,4 @@
-package com.xchaset.algorithm.tree;
+package com.xchaset.algorithm.sort;
 
 import java.util.Map;
 import java.util.TreeMap;
