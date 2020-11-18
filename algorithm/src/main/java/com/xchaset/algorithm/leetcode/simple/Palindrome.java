@@ -25,7 +25,7 @@ package com.xchaset.algorithm.leetcode.simple;
 public class Palindrome {
 
     public static void main(String[] args) {
-        boolean palindrome = new Palindrome().isPalindrome(0);
+        boolean palindrome = new Palindrome().isPalindrome2(2345432);
         System.out.println(palindrome);
 
     }
@@ -40,6 +40,34 @@ public class Palindrome {
             if (!s1.equals(s2)) {
                 return false;
             }
+        }
+        return true;
+    }
+
+    /**
+     * 121
+     * 是否回文数字，不使用字符串处理
+     * @param x
+     * @return
+     */
+    public boolean isPalindrome2(int x) {
+        if (x < 0) return false;
+        int help = 1;
+        int tmp = x;
+        // 通过循环得到一个数和x位数相同，首位为1 的数，比如2332，则help为1000
+        // x乘以10，help除以10，结束条件为tmp >= 10
+        while (tmp >= 10){
+            help *= 10;
+            tmp /=10;
+        }
+        while (x != 0){
+            if (x % 10 != x/help){
+                return false;
+            }
+            // 去头去尾
+            x = x % help / 10;
+            // 去头去尾后除100
+            help /= 100;
         }
         return true;
     }
