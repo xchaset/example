@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class CoinChange {
 
     public static void main(String[] args) {
-        int i = new CoinChange().coinChange(new int[]{1, 4, 5}, 10);
+        int i = new CoinChange().coinChange(new int[]{10}, 10);
         System.out.println(i);
     }
 

@@ -81,6 +81,16 @@ public class BinaryTree {
             }
         }
 
+        public void prePrintNode(){
+            System.out.println(this.value);
+            if (this.left != null) {
+                this.left.prePrintNode();
+            }
+            if (this.right != null){
+                this.right.prePrintNode();
+            }
+        }
+
 
     }
 }

@@ -17,9 +17,11 @@ public class BinaryTreeTest {
         bt.add(29);
         bt.add(39);
 
-        bt.print();
+//        bt.print();
         int treeHeight = bt.getTreeHeight(bt.getRoot());
-        System.out.println(treeHeight);
-        System.out.println(bt.getMax(bt.getRoot()));
+//        System.out.println(treeHeight);
+//        System.out.println(bt.getMax(bt.getRoot()));
+        bt.getRoot().prePrintNode();
+//        bt.getRoot().printNode();
     }
 }
