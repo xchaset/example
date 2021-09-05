@@ -1,10 +1,8 @@
 package com.xchaset.es.chat.entity;
 
 import lombok.*;
-import org.elasticsearch.index.fielddata.FieldData;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
 
 import java.util.List;
 
